@@ -3230,7 +3230,9 @@ class Parser
 
                 // Validating ResultVariable
                 if ( ! isset($this->queryComponents[$lookaheadValue]['resultVariable'])) {
-                    $this->semanticalError('Cannot add having condition on a non result variable.');
+                    //$this->semanticalError('Cannot add having condition on a non result variable.');
+                    $expr = $this->SingleValuedPathExpression();
+                    break;
                 }
 
                 $expr = $this->ResultVariable();
